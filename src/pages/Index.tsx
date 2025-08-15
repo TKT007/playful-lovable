@@ -19,6 +19,9 @@ const Index = () => {
   };
 
 const handleComplete = () => {
+  if (typeof window !== 'undefined' && window.ttq) {
+    window.ttq.track('CompleteRegistration');
+  }
   const finalUrl = addSourceToUrl("https://fb.track-conv.shop/visit/fd23a0e7-2551-4770-8b6f-016abfa138aa");
   window.location.href = finalUrl;
 };
